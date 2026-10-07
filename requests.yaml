@@ -1,0 +1,1165 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: requests
+meta:
+  id: wrk_acfb570038984b03b922c16a3d61a7a6
+  created: 1791384103693
+  modified: 1791384103693
+  description: ""
+collection:
+  - url: http://localhost:1026/v2/entities/urn:ngsi-ld:Store:001
+    name: TESTE
+    meta:
+      id: req_6f278680cd7c480f901533a846213c6f
+      created: 1787827171074
+      modified: 1791384198116
+      isPrivate: false
+      description: ""
+      sortKey: -1791384194683
+    method: GET
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: create
+    meta:
+      id: fld_6b44d9da235f4b3293d1b99f36fe57d7
+      created: 1787826800691
+      modified: 1791384221202
+      sortKey: -1791384194283
+      description: ""
+  - name: Getting Started
+    meta:
+      id: fld_3d9332ee04434ba4be5d3caab6060587
+      created: 1787827223953
+      modified: 1791384207079
+      sortKey: -1791384194383
+      description: ""
+    children:
+      - url: http://localhost:1026/v2/entities
+        name: Create Store
+        meta:
+          id: req_6a96c79e484c4329be5bdf682c619342
+          created: 1787827275123
+          modified: 1787827309951
+          isPrivate: false
+          description: ""
+          sortKey: -1787827275123
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "id": "urn:ngsi-ld:Store:001",
+                "type": "Store",
+                "address": {
+                    "type": "PostalAddress",
+                    "value": {
+                        "streetAddress": "Bornholmer Straße 65",
+                        "addressRegion": "Berlin",
+                        "addressLocality": "Prenzlauer Berg",
+                        "postalCode": "10439"
+                    },
+                    "metadata": {
+                        "verified": {
+                            "value": true,
+                            "type": "Boolean"
+                        }
+                    }
+                },
+                "location": {
+                    "type": "geo:json",
+                    "value": {
+                         "type": "Point",
+                         "coordinates": [13.3986, 52.5547]
+                    }
+                },
+                "name": {
+                    "type": "Text",
+                    "value": "Bösebrücke Einkauf"
+                }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/entities
+        name: Create Store 2
+        meta:
+          id: req_0350a5a4ee0844138574cf592694d75f
+          created: 1787827359621
+          modified: 1787827397245
+          isPrivate: false
+          description: ""
+          sortKey: -1787827359621
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "type": "Store",
+                "id": "urn:ngsi-ld:Store:002",
+                "address": {
+                    "type": "PostalAddress",
+                    "value": {
+                        "streetAddress": "Friedrichstraße 44",
+                        "addressRegion": "Berlin",
+                        "addressLocality": "Kreuzberg",
+                        "postalCode": "10969"
+                    },
+                    "metadata": {
+                        "verified": {
+                            "value": true,
+                            "type": "Boolean"
+                        }
+                    }
+                },
+                "location": {
+                    "type": "geo:json",
+                    "value": {
+                         "type": "Point",
+                         "coordinates": [13.3903, 52.5075]
+                    }
+                },
+                "name": {
+                    "type": "Text",
+                    "value": "Checkpoint Markt"
+                }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Understanding Entities and Relationships
+    meta:
+      id: fld_11779fd7948c43108149c4a799836a3b
+      created: 1787827472091
+      modified: 1791384205351
+      sortKey: -1791384194483
+      description: ""
+    children:
+      - url: http://localhost:1026/v2/op/update
+        name: CREATE SHELFS
+        meta:
+          id: req_fcb3880b0b044848b449df1abba6fd1a
+          created: 1787827514870
+          modified: 1787827570807
+          isPrivate: false
+          description: ""
+          sortKey: -1787827514870
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "actionType":"APPEND",
+              "entities":[
+                {
+                  "id":"urn:ngsi-ld:Shelf:unit001", "type":"Shelf",
+                  "location":{
+                    "type":"geo:json", "value":{ "type":"Point","coordinates":[13.3986112, 52.554699]}
+                  },
+                  "name":{
+                    "type":"Text", "value":"Corner Unit"
+                  },
+                  "maxCapacity":{
+                    "type":"Integer", "value":50
+                  }
+                },
+                {
+                  "id":"urn:ngsi-ld:Shelf:unit002", "type":"Shelf",
+                  "location":{
+                    "type":"geo:json","value":{"type":"Point","coordinates":[13.3987221, 52.5546640]}
+                  },
+                  "name":{
+                    "type":"Text", "value":"Wall Unit 1"
+                  },
+                  "maxCapacity":{
+                    "type":"Integer", "value":100
+                  }
+                },
+                {
+                  "id":"urn:ngsi-ld:Shelf:unit003", "type":"Shelf",
+                  "location":{
+                    "type":"geo:json", "value":{"type":"Point","coordinates":[13.3987221, 52.5546640]}
+                  },
+                  "name":{
+                    "type":"Text", "value":"Wall Unit 2"
+                  },
+                  "maxCapacity":{
+                    "type":"Integer", "value":100
+                  }
+                },
+                {
+                  "id":"urn:ngsi-ld:Shelf:unit004", "type":"Shelf",
+                  "location":{
+                    "type":"geo:json", "value":{"type":"Point","coordinates":[13.390311, 52.507522]}
+                  },
+                  "name":{
+                    "type":"Text", "value":"Corner Unit"
+                  },
+                  "maxCapacity":{
+                    "type":"Integer", "value":50
+                  }
+                },
+                {
+                  "id":"urn:ngsi-ld:Shelf:unit005", "type":"Shelf",
+                  "location":{
+                    "type":"geo:json","value":{"type":"Point","coordinates":[13.390309, 52.50751]}
+                  },
+                  "name":{
+                    "type":"Text", "value":"Long Wall Unit"
+                  },
+                  "maxCapacity":{
+                    "type":"Integer", "value":200
+                  }
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/op/update
+        name: CREATE PRODUCTS
+        meta:
+          id: req_789de65000824849a713f15751cc94bc
+          created: 1787827579104
+          modified: 1787827618575
+          isPrivate: false
+          description: ""
+          sortKey: -1787827579104
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "actionType":"APPEND",
+              "entities":[
+                {
+                  "id":"urn:ngsi-ld:Product:001", "type":"Product",
+                  "name":{
+                    "type":"Text", "value":"Apples"
+                  },
+                  "size":{
+                    "type":"Text", "value": "S"
+                  },
+                  "price":{
+                    "type":"Integer", "value": 99
+                  }
+                },
+                {
+                  "id":"urn:ngsi-ld:Product:002", "type":"Product",
+                  "name":{
+                    "type":"Text", "value":"Bananas"
+                  },
+                  "size":{
+                    "type":"Text", "value": "M"
+                  },
+                  "price":{
+                    "type":"Integer", "value": 1099
+                  }
+                },
+                {
+                  "id":"urn:ngsi-ld:Product:003", "type":"Product",
+                  "name":{
+                    "type":"Text", "value":"Coconuts"
+                  },
+                  "size":{
+                    "type":"Text", "value": "M"
+                  },
+                  "price":{
+                    "type":"Integer", "value": 1499
+                  }
+                },
+                {
+                  "id":"urn:ngsi-ld:Product:004", "type":"Product",
+                  "name":{
+                    "type":"Text", "value":"Melons"
+                  },
+                  "size":{
+                    "type":"Text", "value": "XL"
+                  },
+                  "price":{
+                    "type":"Integer", "value": 5000
+                  }
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/op/update
+        name: "SHELF IN STORES RELATIONSHIP "
+        meta:
+          id: req_46c1d26010bb4abab0b1d3d93bb60327
+          created: 1787827661174
+          modified: 1787827709635
+          isPrivate: false
+          description: ""
+          sortKey: -1787827661174
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "actionType":"APPEND",
+              "entities":[
+                {
+                  "id":"urn:ngsi-ld:Shelf:unit001", "type":"Shelf",
+                  "refStore": {
+                    "type": "Relationship",
+                    "value": "urn:ngsi-ld:Store:001"
+                  }
+                },
+                {
+                  "id":"urn:ngsi-ld:Shelf:unit002", "type":"Shelf",
+                  "refStore": {
+                    "type": "Relationship",
+                    "value": "urn:ngsi-ld:Store:001"
+                  }
+                },
+                {
+                  "id":"urn:ngsi-ld:Shelf:unit003", "type":"Shelf",
+                  "refStore": {
+                    "type": "Relationship",
+                    "value": "urn:ngsi-ld:Store:001"
+                  }
+                },
+                {
+                  "id":"urn:ngsi-ld:Shelf:unit004", "type":"Shelf",
+                  "refStore": {
+                    "type": "Relationship",
+                    "value": "urn:ngsi-ld:Store:002"
+                  }
+                },
+                {
+                  "id":"urn:ngsi-ld:Shelf:unit005", "type":"Shelf",
+                  "refStore": {
+                    "type": "Relationship",
+                    "value": "urn:ngsi-ld:Store:002"
+                  }
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/entities
+        name: INVENTORY ITEM RELATIONSHIP
+        meta:
+          id: req_9a88a698985146788d6301b345cf26e4
+          created: 1787827730808
+          modified: 1787827764921
+          isPrivate: false
+          description: ""
+          sortKey: -1787827730808
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "id": "urn:ngsi-ld:InventoryItem:001", "type": "InventoryItem",
+                "refStore": {
+                    "type": "Relationship",
+                    "value": "urn:ngsi-ld:Store:001"
+                },
+                "refShelf": {
+                    "type": "Relationship",
+                    "value": "urn:ngsi-ld:Shelf:unit001"
+                },
+                "refProduct": {
+                    "type": "Relationship",
+                    "value": "urn:ngsi-ld:Product:001"
+                },
+                "stockCount":{
+                    "type":"Integer", "value": 10000
+                },
+                "shelfCount":{
+                    "type":"Integer", "value": 50
+                }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/op/update
+        name: BATCH CREATE
+        meta:
+          id: req_6ab3363bf945483bb817b0c2cdad98aa
+          created: 1787827920903
+          modified: 1787828235612
+          isPrivate: false
+          description: ""
+          sortKey: -1787827920903
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "actionType":"append_strict",
+              "entities":[
+                {
+                  "id":"urn:ngsi-ld:Product:011", "type":"Product",
+                  "name":{"type":"Text", "value":"Brandy"},
+                  "size":{"type":"Text", "value": "M"},
+                  "price":{"type":"Integer", "value": 1199}
+                },
+                {
+                  "id":"urn:ngsi-ld:Product:012", "type":"Product",
+                  "name":{"type":"Text", "value":"Port"},
+                  "size":{"type":"Text", "value": "M"},
+                  "price":{"type":"Integer", "value": 1099}
+                },
+                {
+                  "id":"urn:ngsi-ld:Product:001", "type":"Product",
+                  "offerPrice":{"type":"Integer", "value": 89}
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/op/update
+        name: BATCH CREATE/OVERWRITE
+        meta:
+          id: req_a8edb797fd9d4c00a9fae0befd354077
+          created: 1787828288625
+          modified: 1787828341124
+          isPrivate: false
+          description: ""
+          sortKey: -1787828288625
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "actionType":"append",
+              "entities":[
+                {
+                  "id":"urn:ngsi-ld:Product:011", "type":"Product",
+                  "name":{"type":"Text", "value":"Brandy"},
+                  "size":{"type":"Text", "value": "M"},
+                  "price":{"type":"Integer", "value": 1199}
+                },
+                {
+                  "id":"urn:ngsi-ld:Product:012", "type":"Product",
+                  "name":{"type":"Text", "value":"Port"},
+                  "size":{"type":"Text", "value": "M"},
+                  "price":{"type":"Integer", "value": 1099}
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/entities/urn:ngsi-ld:Product:010
+        name: Read Full Context
+        meta:
+          id: req_d242eed1f5ee4e24b39072d744a13d9c
+          created: 1787828426003
+          modified: 1787828518752
+          isPrivate: false
+          description: ""
+          sortKey: -1787828426003
+        method: GET
+        parameters:
+          - name: type
+            value: Product
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/entities/urn:ngsi-ld:Product:001/attrs/name/value
+        name: Read a Atribute from a entitie
+        meta:
+          id: req_adf0d177f493426c9d5377ead4703d2d
+          created: 1787828561830
+          modified: 1787828707735
+          isPrivate: false
+          description: ""
+          sortKey: -1787828561830
+        method: GET
+        parameters:
+          - name: type
+            value: Product
+            description: ""
+            disabled: false
+          - name: options
+            value: values
+            description: ""
+            disabled: false
+          - name: attrs
+            value: name
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/entities/urn:ngsi-ld:Product:001
+        name: READ A DATA ENTITIE
+        meta:
+          id: req_cd18a335c41548bdb7590150491f7e58
+          created: 1787828716286
+          modified: 1787828809564
+          isPrivate: false
+          description: ""
+          sortKey: -1787828716286
+        method: GET
+        parameters:
+          - name: type
+            value: Product
+            description: ""
+            disabled: false
+          - name: options
+            value: keyValues
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/entities/urn:ngsi-ld:Product:001
+        name: MULT ATRRS VALUES FROM A DATA ENTITIE
+        meta:
+          id: req_05101e90bc6c4a3e9aa7d42207840b43
+          created: 1787828838136
+          modified: 1787829137227
+          isPrivate: false
+          description: ""
+          sortKey: -1787828838136
+        method: GET
+        parameters:
+          - name: type
+            value: Product
+            description: ""
+            disabled: false
+          - name: options
+            value: values
+            description: ""
+            disabled: false
+          - name: attrs
+            value: name,price
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/entities
+        name: LIST ATRIBUTE TYPES
+        meta:
+          id: req_7ae3ef65855b445687c1c04ec3119f28
+          created: 1787829179324
+          modified: 1787829450920
+          isPrivate: false
+          description: ""
+          sortKey: -1787829179324
+        method: GET
+        parameters:
+          - name: type
+            value: Product
+            description: ""
+            disabled: false
+          - name: options
+            value: keyValues
+            description: ""
+            disabled: false
+          - name: attrs
+            value: __NONE
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/entities/urn:ngsi-ld:Product:001/attrs/price/value
+        name: OVERWRITE ONE ATRIBUTE
+        meta:
+          id: req_97fe11a0ad604ac3a2f0993dd5225b6d
+          created: 1787829636837
+          modified: 1787829832353
+          isPrivate: false
+          description: ""
+          sortKey: -1787829636837
+        method: PUT
+        body:
+          mimeType: text/plain
+          text: "89"
+        parameters:
+          - name: type
+            value: Product
+            description: ""
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: text/plain
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/entities/urn:ngsi-ld:Product:001/attrs
+        name: OVERWRITE MULT ATRIBUTES
+        meta:
+          id: req_a2dc23db07734cc79088802d471822d6
+          created: 1787830005979
+          modified: 1787830164119
+          isPrivate: false
+          description: ""
+          sortKey: -1787830005979
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"price": {"type": "Integer", "value": 89},
+            	"name": {"type": "Text", "value": "Ale"}
+            }
+        parameters:
+          - name: type
+            value: Product
+            description: ""
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/op/update
+        name: OVERWRITE MULT ENTITIES
+        meta:
+          id: req_ceedea5c71d84e1ba95be40e8ae5f5bf
+          created: 1787830171271
+          modified: 1787830313927
+          isPrivate: false
+          description: ""
+          sortKey: -1787830171271
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"actionType": "update",
+            	"entities": [
+            		{
+                  "id":"urn:ngsi-ld:Product:001", "type":"Product",
+                  "price":{"type":"Integer", "value": 1199}
+                },
+                {
+                  "id":"urn:ngsi-ld:Product:002", "type":"Product",
+                  "price":{"type":"Integer", "value": 1199},
+                  "size": {"type":"Text", "value": "L"}
+                }
+            	]
+            }
+        parameters:
+          - name: type
+            value: Product
+            description: ""
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/op/update
+        name: CREATE/OVERWRITE ATTRS OF MULT ENTITIES
+        meta:
+          id: req_14d526b035fd41dd94ecca7e5db82958
+          created: 1787830385295
+          modified: 1787830513978
+          isPrivate: false
+          description: ""
+          sortKey: -1787830385295
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"actionType": "append",
+            	"entities": [
+            		{
+                  "id":"urn:ngsi-ld:Product:001", "type":"Product",
+                  "price":{"type":"Integer", "value": 1199}
+                },
+                {
+                  "id":"urn:ngsi-ld:Product:002", "type":"Product",
+                  "price":{"type":"Integer", "value": 1199},
+                  "specialOffer": {"type":"Boolean", "value":  true}
+                }
+            	]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/op/update
+        name: REPLACE ENTITY
+        meta:
+          id: req_82402618c92942af8ec02d14f94a4176
+          created: 1787830554043
+          modified: 1787830617447
+          isPrivate: false
+          description: ""
+          sortKey: -1787830554043
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "actionType":"replace",
+              "entities":[
+                {
+                  "id":"urn:ngsi-ld:Product:010", "type":"Product",
+                  "price":{"type":"Integer", "value": 1199}
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/entities/urn:ngsi-ld:Product:010
+        name: DELETE AN ENTITY
+        meta:
+          id: req_89dd68b81e2f4f8d94a2d606d0ed8f77
+          created: 1787830637044
+          modified: 1787830658897
+          isPrivate: false
+          description: ""
+          sortKey: -1787830637044
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/entities/urn:ngsi-ld:Product:001/attrs/specialOffer
+        name: DELETE ATTR FROM ENTITY
+        meta:
+          id: req_14c8a81ac97e44259f66a395986ef77b
+          created: 1787830673602
+          modified: 1787830721832
+          isPrivate: false
+          description: ""
+          sortKey: -1787830673602
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/op/update
+        name: BATCH DELETE MULT ENTITIES
+        meta:
+          id: req_5ff7331bc50e4a1589a5c1b984f68c71
+          created: 1787830736084
+          modified: 1787830787199
+          isPrivate: false
+          description: ""
+          sortKey: -1787830736084
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "actionType":"delete",
+              "entities":[
+                {
+                  "id":"urn:ngsi-ld:Product:001", "type":"Product"
+                },
+                {
+                  "id":"urn:ngsi-ld:Product:002", "type":"Product"
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/op/update
+        name: BATCH DELETE MULT ATTRS FROM ENTITY
+        meta:
+          id: req_266a0934ac1248bbb5fcdf98c41dbd2d
+          created: 1787830810479
+          modified: 1787830849930
+          isPrivate: false
+          description: ""
+          sortKey: -1787830810479
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "actionType":"delete",
+              "entities":[
+                {
+                  "id":"urn:ngsi-ld:Product:003", "type":"Product",
+                  "price":{},
+                  "name": {}
+                }
+              ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/entities
+        name: FIND EXISTING DATA RELATIONSHIPS
+        meta:
+          id: req_6d79acabfb9747cc81e42333b93d56e1
+          created: 1787830865158
+          modified: 1787830977441
+          isPrivate: false
+          description: ""
+          sortKey: -1787830865158
+        method: GET
+        parameters:
+          - name: q
+            value: refProduct==urn:ngsi-ld:Product:001
+            description: ""
+            disabled: false
+          - name: options
+            value: count
+            description: ""
+            disabled: false
+          - name: attrs
+            value: type
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Context providers
+    meta:
+      id: fld_fec84c30f25646f1973c0f8041063ca5
+      created: 1787921801000
+      modified: 1791384202468
+      sortKey: -1791384194583
+      description: ""
+    children:
+      - url: http://localhost:3000/health/random
+        name: New Request
+        meta:
+          id: req_7dd997b563e64ffabb238f8cf5fd9015
+          created: 1787921807587
+          modified: 1787921809906
+          isPrivate: false
+          description: ""
+          sortKey: -1787921807587
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/static/temperature/op/query
+        name: Retrieving a Single Attribute Value
+        meta:
+          id: req_261c9d623d854b07b6de786cd41ac5f1
+          created: 1788179824458
+          modified: 1788179866824
+          isPrivate: false
+          description: ""
+          sortKey: -1788179824458
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "entities": [
+                    {
+                        "type": "Store",
+                        "isPattern": "false",
+                        "id": "urn:ngsi-ld:Store:001"
+                    }
+                ],
+                "attrs": [
+                    "temperature"
+                ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/random/weatherConditions/op/query
+        name: New Request
+        meta:
+          id: req_605721680d254b6e93b87007135f287c
+          created: 1788179957665
+          modified: 1788179975749
+          isPrivate: false
+          description: ""
+          sortKey: -1788179957665
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+                "entities": [
+                    {
+                        "type": "Store",
+                        "isPattern": "false",
+                        "id": "urn:ngsi-ld:Store:001"
+                    }
+                ],
+                "attrs": [
+                    "temperature",
+                    "relativeHumidity"
+                ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/registrations
+        name: Registering a new Context Provider
+        meta:
+          id: req_385d4eb39b784fd8950174d1959c1b56
+          created: 1788180391778
+          modified: 1788180452880
+          isPrivate: false
+          description: ""
+          sortKey: -1788180391778
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "description": "Random Weather Conditions",
+              "dataProvided": {
+                "entities": [
+                  {
+                    "id": "urn:ngsi-ld:Store:001",
+                    "type": "Store"
+                  }
+                ],
+                "attrs": [
+                  "relativeHumidity"
+                ]
+              },
+              "provider": {
+                "http": {
+                  "url": "http://context-provider:3000/random/weatherConditions"
+                }
+              }
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/registrations/6a9577d8110cf900c30d9156
+        name: Read a registered Context Provider
+        meta:
+          id: req_515d688562704598a6f25ae184d64276
+          created: 1788180631900
+          modified: 1788180785727
+          isPrivate: false
+          description: ""
+          sortKey: -1788180631900
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:1026/v2/registrations/6a9577d8110cf900c30d9156
+        name: Remove a registered Context Provider
+        meta:
+          id: req_c75868a8b67c4fac81c9e832cd54e2cb
+          created: 1788180767674
+          modified: 1788180789040
+          isPrivate: false
+          description: ""
+          sortKey: -1788180767674
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_6e27eb61afa16fa73e25fa231b3c7e7112c56221
+    created: 1791384103697
+    modified: 1791384103697
+environments:
+  name: Base Environment
+  meta:
+    id: env_6e27eb61afa16fa73e25fa231b3c7e7112c56221
+    created: 1791384103696
+    modified: 1791384103696
+    isPrivate: false
